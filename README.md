@@ -3,7 +3,7 @@
 OOP menggunakan TypeScript untuk playlist lihat lewat videonya :>> [link video]( https://www.youtube.com/playlist?list=PLnQvfeVegcJZRieebeIp0xj1NeC5L633Y)
 Credit to @nusendra 
 
-resources from :[javari-dev](https://github.com/jafari-dev/oop-expert-with-typescript.git)
+resources from :>>[javari-dev](https://github.com/jafari-dev/oop-expert-with-typescript.git)
 # Object Oriented Programming Expert With TypeScript
 
 This repository is a complete guide and tutorial for the principles and techniques of object-oriented programming. It can be a reference for all interested in programming and software developers. You will find simple and practical examples in all sections to make the concepts easier to understand.
