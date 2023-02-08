@@ -1,8 +1,11 @@
+# TypeScript Decorators in 6 Minutes
+### <span style="color:rgb(117, 117, 117)"> It Turns Out That TypeScript’s Decorators Are Not Difficult, an Article To Let You Master the 4 Types of Decorators!</span>
+
 Welcome to the Mastering TypeScript series. This series will introduce the core knowledge and techniques of TypeScript in the form of animations. Let’s learn together! 
 
 If you’ve used Angular or Nest.js, you should be familiar with decorators.
 
-```typescript
+```javascript
 import { Controller, Get } from '@nestjs/common';
 
 @Controller('cats')
@@ -40,7 +43,7 @@ Next, I will introduce these 4 types of decorators separately.
 
 Class decorators, as the name suggests, are used to decorating classes. The type corresponding to the class decorator is defined in the lib.es5.d.ts file:
 
-```typescript
+```javascript
 // node_modules/typescript/lib/lib.es5.d.ts
 declare type ClassDecorator = <TFunction extends Function>
   (target: TFunction) => TFunction | void;
