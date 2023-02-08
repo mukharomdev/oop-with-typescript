@@ -1,8 +1,8 @@
-Welcome to the Mastering TypeScript series. This series will introduce the core knowledge and techniques of TypeScript in the form of animations. Let’s learn together! Previous articles are as follows:
+Welcome to the Mastering TypeScript series. This series will introduce the core knowledge and techniques of TypeScript in the form of animations. Let’s learn together! 
 
 If you’ve used Angular or Nest.js, you should be familiar with decorators.
 
-```
+```typescript
 import { Controller, Get } from '@nestjs/common';
 
 @Controller('cats')
@@ -17,7 +17,7 @@ export class CatsController {
 
 In the above code @XXXis syntactic sugar, to enable experimental decorators feature you must enable experimentalDecorators compiler option on command line or in tsconfig.json file.
 
-```
+```json
 {
   "compilerOptions": {
      "target": "es2016",
@@ -29,10 +29,10 @@ In the above code @XXXis syntactic sugar, to enable experimental decorators feat
 
 There are four main types of decorators:
 
-    Class Decorator
-    Property Decorator
-    Method Decorator
-    Parameter Decorator
+####  Class Decorator
+#### Property Decorator
+####  Method Decorator
+####  Parameter Decorator
 
 Next, I will introduce these 4 types of decorators separately.
 
@@ -212,6 +212,7 @@ function logMethod(
 }
 ```
 Once we have the logMethod method decorator, we can apply it on the member methods of the class. For example, I used the logMethod decorator on the greet member method of the User class:
+
 ```
 class User {
   @logMethod
