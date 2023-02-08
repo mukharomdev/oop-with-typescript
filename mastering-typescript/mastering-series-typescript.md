@@ -44,3 +44,6 @@
 - Facade Pattern in TypeScript
 - Proxy Pattern in TypeScript
 - Command Pattern in TypeScript
+
+source :
+[^1]:https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229
