@@ -40,7 +40,7 @@ Next, I will introduce these 4 types of decorators separately.
 
 Class decorators, as the name suggests, are used to decorating classes. The type corresponding to the class decorator is defined in the lib.es5.d.ts file:
 
-```
+```typescript
 // node_modules/typescript/lib/lib.es5.d.ts
 declare type ClassDecorator = <TFunction extends Function>
   (target: TFunction) => TFunction | void;
@@ -48,7 +48,7 @@ declare type ClassDecorator = <TFunction extends Function>
 ```
 As can be seen from the type definition of the class decorator, it receives a parameter representing the class to be decorated. According to the definition of class decorator, we can create a Greeter decorator to add a greet method to the decorated class:
 
-```
+```typescript
 // user.ts
 function Greeter(target: Function): void {
   target.prototype.greet = function (): void {
@@ -64,10 +64,11 @@ let bytefer = new User();
 
 ```
 When you successfully run the above code, the terminal will output the result — Hello Bytefer!. The class decorator looks pretty simple, but now comes the problem. What should we do if we want to customize the output of the greet method? To satisfy this functionality, we need to use the decorator factory.
-Decorator Factory
+#### Decorator Factory
 
 The so-called decorator factory is to return the decorator after being called. Using the characteristics of higher-order functions, let’s update the Greeter function defined earlier:
-```
+
+```typescript
 function Greeter(msg: string) {
    return (target: Function): void => {
     target.prototype.greet = function (): void {
@@ -77,7 +78,7 @@ function Greeter(msg: string) {
 }
 ```
 After updating the Greeter decorator factory, we need to use it in the following way:
-```
+```typescript
 @Greeter("Hello TypeScript!")
 class User {}
 
@@ -85,7 +86,8 @@ let bytefer = new User();
 (bytefer as any).greet();
 ```
 When you successfully run the above code, the terminal will output the result — Hello TypeScript!. It should be noted that we can use multiple class decorators for the same class. For example, in the following code, I added a Log class decorator:
-```
+
+```typescript
 function Log(target: Function): void {
   target.prototype.log = (msg: string) => {
     console.log(`From ${target.name}: `, msg);
@@ -101,20 +103,23 @@ let bytefer = new User();
 (bytefer as any).log("Hello Kakuqo!");
 ```
 In the above code, we have added 2 decorators to the User class, after that, we can call greet and log methods on the User instance.
-```
+
+```terminal
 Hello TypeScript!
 From User:  Hello Kakuqo!
 ```
 # Property Decorator
 
 Property decorators are used to decorating properties of classes. Its corresponding type declaration is as follows:
-```
+
+```typescript
 // node_modules/typescript/lib/lib.es5.d.ts
 declare type PropertyDecorator = 
  (target: Object, propertyKey: string | symbol) => void;
 ```
 The property decorator function takes 2 parameters: target and property. According to the definition of property decorator, Let’s define a property decorator logProperty to track user actions on a property.
-```
+
+```typescript
 function logProperty(target: any, key: string) {
   let value = target[key];
 
@@ -140,7 +145,7 @@ function logProperty(target: any, key: string) {
 }
 ```
 Once we have the logProperty property decorator, we can apply it on the properties of the class. For example, I used the logProperty decorator on the nameproperty of the User class:
-```
+```typescript
 class User {
   @logProperty
   public name: string;
@@ -155,7 +160,7 @@ user.name = "Kakuqo";
 console.log(user.name);
 ```
 When you successfully run the above code, the terminal will output the results:
-```
+```terminal
 Set name to Bytefer
 Set name to Kakuqo
 Getter for name returned Kakuqo
@@ -165,7 +170,7 @@ In addition to being able to decorate the properties of the class, we can also d
 # Method Decorator
 
 Method decorators are used to decorating methods of classes. Its corresponding type declaration is as follows:
-```
+```typescript
 // node_modules/typescript/lib/lib.es5.d.ts
 declare type MethodDecorator = <T>(
   target: Object, 
@@ -174,7 +179,7 @@ declare type MethodDecorator = <T>(
 ) => TypedPropertyDescriptor<T> | void;
 ```
 Compared with the property decorator, the method decorator has one more descriptor parameter. The type of the parameter is as follows:
-```
+```typescript
 interface TypedPropertyDescriptor<T> {
     enumerable?: boolean;
     configurable?: boolean;
@@ -185,7 +190,7 @@ interface TypedPropertyDescriptor<T> {
 }
 ```
 If you don’t need to use generics, you can also use the PropertyDescriptor interface:
-```
+```typescript
 interface PropertyDescriptor {
     configurable?: boolean;
     enumerable?: boolean;
@@ -196,7 +201,7 @@ interface PropertyDescriptor {
 }
 ```
 According to the definition of method decorator, Let’s define a method decorator logMethod to track the invocation of class member methods.
-```
+```typescript
 function logMethod(
   target: Object,
   propertyKey: string,
@@ -213,7 +218,7 @@ function logMethod(
 ```
 Once we have the logMethod method decorator, we can apply it on the member methods of the class. For example, I used the logMethod decorator on the greet member method of the User class:
 
-```
+```typescript
 class User {
   @logMethod
   greet(msg: string): string {
@@ -234,7 +239,7 @@ Hello Bytefer!
 After mastering the method decorator, we can define some useful method decorators. such as delay, throttle, etc.
 
 delay
-```
+```typescript
 function delay(milliseconds: number = 0): any {
   return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
@@ -249,7 +254,7 @@ function delay(milliseconds: number = 0): any {
 }
 ```
 throttle
-```
+```typescript
 const throttleFn = require('lodash.throttle');
 
 function throttle(milliseconds: number = 0, options = {}): any {
@@ -264,7 +269,7 @@ Finally, let’s introduce the parameter decorator.
 # Parameter Decorator
 
 Parameter decorators are used to decorating parameters in methods. Its corresponding type declaration is as follows:
-```
+```typescript
 // node_modules/typescript/lib/lib.es5.d.ts
 declare type ParameterDecorator = (
  target: Object, 
@@ -273,14 +278,14 @@ declare type ParameterDecorator = (
 ```
 According to the definition of parameter decorator, Let’s define a method decorator logParameter :
 
-```
+```typescript
 function logParameter(target: Object, key: string, parameterIndex: number) {
   console.log(`The parameter in position ${parameterIndex} at ${key} has been decorated`);
 }
 ```
 With the logParameter decorator in place, we apply it to the msg parameter of the greet method in the User class:
 
-```
+```typescript
 class User {
   greet(@logParameter msg: string): void {
     console.log(msg);
@@ -293,7 +298,7 @@ user.greet("Bytefer");
 ```
 When you successfully run the above code, the terminal will output the results:
 
-```
+```terminal
 The parameter in position 0 at greet has been decorated
 Bytefer
 
