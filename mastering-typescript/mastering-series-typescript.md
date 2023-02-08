@@ -1,4 +1,4 @@
-#<span style="color:indigo">Welcome to the Mastering TypeScript series. This series will introduce the core knowledge and techniques of TypeScript in the form of animations. Let’s learn together!</span>
+# <span style="color:indigo">Welcome to the Mastering TypeScript series. This series will introduce the core knowledge and techniques of TypeScript in the form of animations. Let’s learn together!</span>
 
 ## Base
 - What Are K, T, and V in TypeScript Generics?
