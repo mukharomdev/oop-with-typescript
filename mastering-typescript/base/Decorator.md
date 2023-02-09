@@ -312,5 +312,5 @@ Now that the 4 decorators have been introduced, if you want to know how the deco
 
 When developing decorators, we usually also use the reflect-metadata library to process meta information. For example, developing an IoC container or extending the functionality of a web framework. If you want to learn more about decorators, I recommend reading the source code of the overnight project (TypeScript decorators for the ExpressJS Server.), which is easier to understand than the Nest.js framework.
 
-sources : 
-[^1]:https://levelup.gitconnected.com/typescript-decorators-in-6-minutes-daa9660f8286
+sources :
+https://levelup.gitconnected.com/typescript-decorators-in-6-minutes-daa9660f8286

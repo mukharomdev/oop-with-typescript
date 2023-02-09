@@ -13,6 +13,7 @@
 - Purpose of Declare Keyword in TypeScript
 - 10 Things You Need To Know About TypeScript Interface
 - TypeScript Decorators in 6 Minutes
+
 ## Advanced
 - Using TypeScript Mapped Types Like a Pro
 - Using TypeScript Conditional Types Like a Pro
@@ -21,6 +22,7 @@
 - Using TypeScript Intersection Types Like a Pro
 - Using TypeScript Union Types Like a Pro
 - 10 Things You Need To Know About TypeScript Classes
+
 ## Type Challenges
 - Implement the Built-In Pick Utility Type
 - Implement the Built-In Omit Utility Type
@@ -29,6 +31,7 @@
 - Implement the OmitByType Utility Type
 - Implement the PickByType Utility Type
 - Implement the IsAny Utility Type
+
 ## Design Patterns
 - Strategy Pattern in TypeScript
 - Chain of Responsibility Pattern in TypeScript
@@ -46,4 +49,4 @@
 - Command Pattern in TypeScript
 
 source :
-[^1]: https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229
+ https://medium.com/frontend-canteen/with-these-articles-you-will-not-be-confused-when-learning-typescript-d96a5c99e229
