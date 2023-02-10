@@ -6,7 +6,7 @@ One of the most interesting features is that once you’ve learned the syntax, y
 
 Let’s start by looking at some examples and explanations
 #### Basic topics
-**Anchors — ^ and $ **
+**Anchors — ^ and $**
 ```sh
 ^The        matches any string that starts with The -> Try it!
 end$        matches a string that ends with end
