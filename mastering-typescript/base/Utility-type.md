@@ -9,7 +9,7 @@ In this article, I picked 15 very useful types from TypeScript’s built-in util
 
 Constructs a type with all properties of Type set to optional.
 
-![partial type](../images/img_utility_type/partial-utility-type.webp)
+![partial type](/images/img_utility_type/partial-utility-type.webp)
 
 ```javascript
 /**
@@ -20,13 +20,13 @@ type Partial<T> = {
     [P in keyof T]?: T[P];
 };
 ```
-![partial type2](../images/img_utility_type/partial2-utility-type.gif)
-![partial type3](../images/img_utility_type/partial3-utility-type.webp)
+![partial type2](/images/img_utility_type/partial2-utility-type.gif)
+![partial type3](/images/img_utility_type/partial3-utility-type.webp)
 #### 2. Required<Type>
 
 Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
 
-![required type](../images/img_utility_type/required-utility-type.webp)
+![required type](/images/img_utility_type/required-utility-type.webp)
 
 ```javascript
 /**
@@ -37,14 +37,14 @@ type Required<T> = {
     [P in keyof T]-?: T[P];
 };
 ```
-![required2 type](../images/img_utility_type/required2-utility-type.gif)
-![required3 type](../images/img_utility_type/required3-utility-type.webp)
+![required2 type](/images/img_utility_type/required2-utility-type.gif)
+![required3 type](/images/img_utility_type/required3-utility-type.webp)
 
 #### 3. Readonly<Type>
 
 Constructs a type with all properties of Type set to readonly, meaning the properties of the constructed type cannot be reassigned.
 
-![readonly type](../images/img_utility_type/readonly-utility-type.webp)
+![readonly type](/images/img_utility_type/readonly-utility-type.webp)
 
 ```javascript
 /**
@@ -55,13 +55,13 @@ type Readonly<T> = {
     readonly [P in keyof T]: T[P];
 };
 ```
-![readonly2 type](../images/img_utility_type/readonly2-utility-type.gif)
-![readonly3 type](../images/img_utility_type/readonly3-utility-type.webp)
+![readonly2 type](/images/img_utility_type/readonly2-utility-type.gif)
+![readonly3 type](/images/img_utility_type/readonly3-utility-type.webp)
 
 #### 4. Record<Keys, Type>
 
 Constructs an object type whose property keys are Keys and whose property values are Type. This utility can be used to map the properties of a type to another type.
-![record type](../images/img_utility_type/record-utility-type.webp)
+![record type](/images/img_utility_type/record-utility-type.webp)
 
 
 ```javascript
@@ -77,7 +77,7 @@ type Record<K extends keyof any, T> = {
 #### 5. Exclude<UnionType, ExcludedMembers>
 
 Constructs a type by excluding from UnionType all union members that are assignable to ExcludedMembers.
-![exlude type](../images/img_utility_type/exlude-utility-type.webp)
+![exlude type](/images/img_utility_type/exlude-utility-type.webp)
 
 ```javascript
 /**
@@ -87,5 +87,5 @@ Constructs a type by excluding from UnionType all union members that are assigna
 type Exclude<T, U> = T extends U ? never : T
 ```
 
-![exlude2 type](../images/img_utility_type/exlude2-utility-type.gif)
-![exlude3 type](../images/img_utility_type/exlude3-utility-type.webp)
+![exlude2 type](/images/img_utility_type/exlude2-utility-type.gif)
+![exlude3 type](/images/img_utility_type/exlude3-utility-type.webp)
