@@ -61,6 +61,7 @@ type Readonly<T> = {
 #### 4. Record<Keys, Type>
 
 Constructs an object type whose property keys are Keys and whose property values are Type. This utility can be used to map the properties of a type to another type.
+
 ![record type](/images/img_utility_type/record-utility-type.webp)
 
 
