@@ -19,3 +19,4 @@ Credit to @nusendra
 - Design pattern javascript
 - Koleksi Belajar Javascript
 
+:+1: :+1: :+1:  :+1: :+1: :+1: 
