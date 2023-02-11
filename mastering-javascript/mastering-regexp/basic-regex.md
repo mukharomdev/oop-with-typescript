@@ -123,12 +123,12 @@ You can use also the negation operator!
 
 As you’ve seen, the application fields of regex can be multiple and I’m sure that you’ve recognized at least one of these tasks among those seen in your developer career, here a quick list:
 
--     data validation (for example check if a time string i well-formed)
--     data scraping (especially web scraping, find all pages that contain a certain set of words eventually in a specific order)
--     data wrangling (transform data from “raw” to another format)
--     string parsing (for example catch all URL GET parameters, capture text inside a set of parenthesis)
--     string replacement (for example, even during a code session using a common IDE to translate a Java or C# class in the respective JSON object — replace “;” with “,” make it lowercase, avoid type declaration, etc.)
--     syntax highlightning, file renaming, packet sniffing and many other applications involving strings (where data need not be textual)
+- data validation (for example check if a time string i well-formed)
+- data scraping (especially web scraping, find all pages that contain a certain set of words eventually in a specific order)
+- data wrangling (transform data from “raw” to another format)
+- string parsing (for example catch all URL GET parameters, capture text inside a set of parenthesis)
+- string replacement (for example, even during a code session using a common IDE to translate a Java or C# class in the respective JSON object — replace “;” with “,” make it lowercase, avoid type declaration, etc.)
+- syntax highlightning, file renaming, packet sniffing and many other applications involving strings (where data need not be textual)
 
 Have fun and do not forget to recommend the article if you liked it 💚
 
