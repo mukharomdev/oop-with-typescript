@@ -8,7 +8,7 @@ Let’s start by looking at some examples and explanations
 #### Basic topics
 **Anchors — ^ and $**
 
-	^The        matches any string that starts with The -> Try it!
+    ^The        matches any string that starts with The -> Try it!
 	end$        matches a string that ends with end
 	^The end$   exact string match (starts and ends with The end)
 	roar        matches any string that has the text roar in it
@@ -117,7 +117,7 @@ It comes with its negation, \B. This matches all positions where \b doesn’t ma
 You can use also the negation operator!
 
     d(?!r)       matches a d only if is not followed by r, but r will not be part of the overall regex match -> Try it!
-    (?<!r)d      matches a d only if is not preceded by an r, but r will not be part of the overall regex match -> Try it!
+    (?<!r)d      matches a d only if is not preceded by an r, but r will not be part of the overall regex match -> Try it! 
 
 ### Summary
 
@@ -130,6 +130,7 @@ As you’ve seen, the application fields of regex can be multiple and I’m sure
 - string replacement (for example, even during a code session using a common IDE to translate a Java or C# class in the respective JSON object — replace “;” with “,” make it lowercase, avoid type declaration, etc.)
 - syntax highlightning, file renaming, packet sniffing and many other applications involving strings (where data need not be textual)
 
+  
 Have fun and do not forget to recommend the article if you liked it 💚
 
 
